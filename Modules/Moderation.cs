@@ -13,7 +13,7 @@ namespace Death_Bot.Modules
     public class Moderation : ModuleBase
     {
         [Command("erase")]
-        [RequireUserPermission(GuildPermission.ManageMessages)]
+        [RequireUserPermission(GuildPermission.Administrator)]
         public async Task Erase(int amount)
         {
             var messages = await Context.Channel.GetMessagesAsync(amount + 1).FlattenAsync();

@@ -4,6 +4,7 @@ using System.Threading.Tasks;
 using Discord;
 using Discord.Commands;
 using Discord.WebSocket;
+using Infrastructure;
 using Microsoft.Extensions.Logging;
 
 namespace Death_Bot.Modules
@@ -11,9 +12,13 @@ namespace Death_Bot.Modules
     public class ExampleModule : ModuleBase<SocketCommandContext>
     {
         private readonly ILogger<ExampleModule> _logger;
+        private readonly Servers _servers;
 
-        public ExampleModule(ILogger<ExampleModule> logger)
-            => _logger = logger;
+        public ExampleModule(ILogger<ExampleModule> logger, Servers servers)
+        {
+            _logger = logger;
+            _servers = servers;
+        }
 
         [Command("ping")]
         public async Task PingAsync()
@@ -34,6 +39,27 @@ namespace Death_Bot.Modules
             var result = dt.Compute(math, null);
 
             await ReplyAsync($"Result: {result}");
+        }
+
+        [Command("prefix")]
+        [RequireUserPermission(Discord.GuildPermission.Administrator)]
+        public async Task Prefix(string prefix = null)
+        {
+            if(prefix == null)
+            {
+                var guildPrefix = await _servers.GetGuildPrefix(Context.Guild.Id) ?? "$";
+                await ReplyAsync($"The current prefix of this bot is `{guildPrefix}`.");
+                return;
+            }
+
+            if(prefix.Length > 5)
+            {
+                await ReplyAsync("The length of the new prefix is too long!");
+                return;
+            }
+
+            await _servers.ModifyGuildPrefix(Context.Guild.Id, prefix);
+            await ReplyAsync($"The prefix has been adjusted to `{prefix}`.");
         }
 
         [Command("info")]
