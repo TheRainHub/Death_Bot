@@ -1,6 +1,7 @@
 ﻿using System.IO;
 using System.Threading.Tasks;
 using Death_Bot.Services;
+using Death_Bot.Utilities;
 using Discord;
 using Discord.Addons.Hosting;
 using Discord.Commands;
@@ -55,7 +56,8 @@ namespace Death_Bot
                     services
                     .AddHostedService<CommandHandler>()
                     .AddDbContext<BotContext>()
-                    .AddSingleton<Servers>();
+                    .AddSingleton<Servers>()
+                    .AddSingleton<Images>();
                 })
                 .UseConsoleLifetime();
 

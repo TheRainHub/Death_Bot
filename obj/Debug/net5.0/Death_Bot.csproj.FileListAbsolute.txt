@@ -280,3 +280,8 @@ C:\Users\thera\Desktop\Death-Bot\Death_Bot\obj\Debug\net5.0\Death_Bot.dll
 C:\Users\thera\Desktop\Death-Bot\Death_Bot\obj\Debug\net5.0\ref\Death_Bot.dll
 C:\Users\thera\Desktop\Death-Bot\Death_Bot\obj\Debug\net5.0\Death_Bot.pdb
 C:\Users\thera\Desktop\Death-Bot\Death_Bot\obj\Debug\net5.0\Death_Bot.genruntimeconfig.cache
+C:\Users\thera\Desktop\Death-Bot\Death_Bot\bin\Debug\net5.0\Microsoft.Win32.SystemEvents.dll
+C:\Users\thera\Desktop\Death-Bot\Death_Bot\bin\Debug\net5.0\System.Drawing.Common.dll
+C:\Users\thera\Desktop\Death-Bot\Death_Bot\bin\Debug\net5.0\runtimes\win\lib\netcoreapp3.0\Microsoft.Win32.SystemEvents.dll
+C:\Users\thera\Desktop\Death-Bot\Death_Bot\bin\Debug\net5.0\runtimes\unix\lib\netcoreapp3.0\System.Drawing.Common.dll
+C:\Users\thera\Desktop\Death-Bot\Death_Bot\bin\Debug\net5.0\runtimes\win\lib\netcoreapp3.0\System.Drawing.Common.dll

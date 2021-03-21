@@ -19,7 +19,9 @@
           "Microsoft.Extensions.DependencyInjection": "6.0.0-preview.2.21154.6",
           "Microsoft.Extensions.Hosting": "6.0.0-preview.2.21154.6",
           "Microsoft.Extensions.Logging": "6.0.0-preview.2.21154.6",
-          "Pomelo.EntityFrameworkCore.MySql": "5.0.0-alpha.2"
+          "Pomelo.EntityFrameworkCore.MySql": "5.0.0-alpha.2",
+          "System.Drawing.Common": "6.0.0-preview.2.21154.6",
+          "System.Drawing.Primitives": "4.3.0"
         },
         "runtime": {
           "Death_Bot.dll": {}
@@ -511,6 +513,7 @@
         }
       },
       "Microsoft.NETCore.Platforms/6.0.0-preview.2.21154.6": {},
+      "Microsoft.NETCore.Targets/1.1.0": {},
       "Microsoft.Win32.Registry/6.0.0-preview.2.21154.6": {
         "dependencies": {
           "System.Security.AccessControl": "6.0.0-preview.2.21154.6",
@@ -524,6 +527,25 @@
         },
         "runtimeTargets": {
           "runtimes/win/lib/netstandard2.0/Microsoft.Win32.Registry.dll": {
+            "rid": "win",
+            "assetType": "runtime",
+            "assemblyVersion": "6.0.0.0",
+            "fileVersion": "6.0.21.15406"
+          }
+        }
+      },
+      "Microsoft.Win32.SystemEvents/6.0.0-preview.2.21154.6": {
+        "dependencies": {
+          "Microsoft.NETCore.Platforms": "6.0.0-preview.2.21154.6"
+        },
+        "runtime": {
+          "lib/netstandard2.0/Microsoft.Win32.SystemEvents.dll": {
+            "assemblyVersion": "6.0.0.0",
+            "fileVersion": "6.0.21.15406"
+          }
+        },
+        "runtimeTargets": {
+          "runtimes/win/lib/netcoreapp3.0/Microsoft.Win32.SystemEvents.dll": {
             "rid": "win",
             "assetType": "runtime",
             "assemblyVersion": "6.0.0.0",
@@ -599,6 +621,37 @@
           }
         }
       },
+      "System.Drawing.Common/6.0.0-preview.2.21154.6": {
+        "dependencies": {
+          "Microsoft.Win32.SystemEvents": "6.0.0-preview.2.21154.6"
+        },
+        "runtime": {
+          "lib/netcoreapp3.0/System.Drawing.Common.dll": {
+            "assemblyVersion": "6.0.0.0",
+            "fileVersion": "6.0.21.15406"
+          }
+        },
+        "runtimeTargets": {
+          "runtimes/unix/lib/netcoreapp3.0/System.Drawing.Common.dll": {
+            "rid": "unix",
+            "assetType": "runtime",
+            "assemblyVersion": "6.0.0.0",
+            "fileVersion": "6.0.21.15406"
+          },
+          "runtimes/win/lib/netcoreapp3.0/System.Drawing.Common.dll": {
+            "rid": "win",
+            "assetType": "runtime",
+            "assemblyVersion": "6.0.0.0",
+            "fileVersion": "6.0.21.15406"
+          }
+        }
+      },
+      "System.Drawing.Primitives/4.3.0": {
+        "dependencies": {
+          "System.Runtime": "4.3.0",
+          "System.Runtime.Extensions": "4.3.0"
+        }
+      },
       "System.Interactive.Async/4.0.0": {
         "dependencies": {
           "System.Linq.Async": "4.0.0"
@@ -618,12 +671,25 @@
           }
         }
       },
+      "System.Runtime/4.3.0": {
+        "dependencies": {
+          "Microsoft.NETCore.Platforms": "6.0.0-preview.2.21154.6",
+          "Microsoft.NETCore.Targets": "1.1.0"
+        }
+      },
       "System.Runtime.CompilerServices.Unsafe/6.0.0-preview.2.21154.6": {
         "runtime": {
           "lib/netcoreapp2.0/System.Runtime.CompilerServices.Unsafe.dll": {
             "assemblyVersion": "6.0.0.0",
             "fileVersion": "6.0.21.15406"
           }
+        }
+      },
+      "System.Runtime.Extensions/4.3.0": {
+        "dependencies": {
+          "Microsoft.NETCore.Platforms": "6.0.0-preview.2.21154.6",
+          "Microsoft.NETCore.Targets": "1.1.0",
+          "System.Runtime": "4.3.0"
         }
       },
       "System.Security.AccessControl/6.0.0-preview.2.21154.6": {
@@ -977,12 +1043,26 @@
       "path": "microsoft.netcore.platforms/6.0.0-preview.2.21154.6",
       "hashPath": "microsoft.netcore.platforms.6.0.0-preview.2.21154.6.nupkg.sha512"
     },
+    "Microsoft.NETCore.Targets/1.1.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-aOZA3BWfz9RXjpzt0sRJJMjAscAUm3Hoa4UWAfceV9UTYxgwZ1lZt5nO2myFf+/jetYQo4uTP7zS8sJY67BBxg==",
+      "path": "microsoft.netcore.targets/1.1.0",
+      "hashPath": "microsoft.netcore.targets.1.1.0.nupkg.sha512"
+    },
     "Microsoft.Win32.Registry/6.0.0-preview.2.21154.6": {
       "type": "package",
       "serviceable": true,
       "sha512": "sha512-EkqgePfJDNZHGxqlWqhdFXA8m7gfYvexhfUvcctSpgMu/oud/gTQ1nsYzHi9CNoJLyaMCaLb6W8wt6EAYp4HQQ==",
       "path": "microsoft.win32.registry/6.0.0-preview.2.21154.6",
       "hashPath": "microsoft.win32.registry.6.0.0-preview.2.21154.6.nupkg.sha512"
+    },
+    "Microsoft.Win32.SystemEvents/6.0.0-preview.2.21154.6": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-CqMKCb75xr4mJmT6Hh0WkJwE4AN5j0dSaol/5yG/4lyYI34kcqnqYMJglsDe4KVmjwd15IzZR1pcxaUoP/JQQg==",
+      "path": "microsoft.win32.systemevents/6.0.0-preview.2.21154.6",
+      "hashPath": "microsoft.win32.systemevents.6.0.0-preview.2.21154.6.nupkg.sha512"
     },
     "MySqlConnector/1.1.0": {
       "type": "package",
@@ -1033,6 +1113,20 @@
       "path": "system.diagnostics.eventlog/6.0.0-preview.2.21154.6",
       "hashPath": "system.diagnostics.eventlog.6.0.0-preview.2.21154.6.nupkg.sha512"
     },
+    "System.Drawing.Common/6.0.0-preview.2.21154.6": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-K/Ncl3LRS8oZdOFfzYw7dA1q7HUbsoP4Bpqlhs54NIK5xqBpYkuHCy8SMcsG7U1ibc0mSz1kYA9njG5xW3i1gg==",
+      "path": "system.drawing.common/6.0.0-preview.2.21154.6",
+      "hashPath": "system.drawing.common.6.0.0-preview.2.21154.6.nupkg.sha512"
+    },
+    "System.Drawing.Primitives/4.3.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-1QU/c35gwdhvj77fkScXQQbjiVAqIL3fEYn/19NE0CV/ic5TN5PyWAft8HsrbRd4SBLEoErNCkWSzMDc0MmbRw==",
+      "path": "system.drawing.primitives/4.3.0",
+      "hashPath": "system.drawing.primitives.4.3.0.nupkg.sha512"
+    },
     "System.Interactive.Async/4.0.0": {
       "type": "package",
       "serviceable": true,
@@ -1047,12 +1141,26 @@
       "path": "system.linq.async/4.0.0",
       "hashPath": "system.linq.async.4.0.0.nupkg.sha512"
     },
+    "System.Runtime/4.3.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-JufQi0vPQ0xGnAczR13AUFglDyVYt4Kqnz1AZaiKZ5+GICq0/1MH/mO/eAJHt/mHW1zjKBJd7kV26SrxddAhiw==",
+      "path": "system.runtime/4.3.0",
+      "hashPath": "system.runtime.4.3.0.nupkg.sha512"
+    },
     "System.Runtime.CompilerServices.Unsafe/6.0.0-preview.2.21154.6": {
       "type": "package",
       "serviceable": true,
       "sha512": "sha512-gDKgU126IOgRC3269+m5dnEKfoI1z16Ssl4DJfKVNrXJ+SBKrE5Aiys+qoMjDctHd05ARbUeVj45Pe8arG/Saw==",
       "path": "system.runtime.compilerservices.unsafe/6.0.0-preview.2.21154.6",
       "hashPath": "system.runtime.compilerservices.unsafe.6.0.0-preview.2.21154.6.nupkg.sha512"
+    },
+    "System.Runtime.Extensions/4.3.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-guW0uK0fn5fcJJ1tJVXYd7/1h5F+pea1r7FLSOz/f8vPEqbR2ZAknuRDvTQ8PzAilDveOxNjSfr0CHfIQfFk8g==",
+      "path": "system.runtime.extensions/4.3.0",
+      "hashPath": "system.runtime.extensions.4.3.0.nupkg.sha512"
     },
     "System.Security.AccessControl/6.0.0-preview.2.21154.6": {
       "type": "package",
