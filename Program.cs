@@ -11,6 +11,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using Victoria;
 
 namespace Death_Bot
 {
@@ -56,6 +57,10 @@ namespace Death_Bot
                     services
                     .AddHostedService<CommandHandler>()
                     .AddDbContext<BotContext>()
+                    .AddLavaNode(x =>
+                    {
+                        x.SelfDeaf = true;
+                    })
                     .AddSingleton<Servers>()
                     .AddSingleton<Images>();
                 })

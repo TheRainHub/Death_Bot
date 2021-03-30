@@ -15,7 +15,7 @@ namespace Death_Bot.Utilities
         public async Task<string> CreateImageAsync(SocketGuildUser user)
         {
             var avatar = await FetchImageAsync(user.GetAvatarUrl(size: 2048, format: Discord.ImageFormat.Png) ?? user.GetDefaultAvatarUrl());
-            var background = await FetchImageAsync("https://images.unsplash.com/photo-1600758208050-a22f17dc5bb9?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80");
+            var background = await FetchImageAsync("https://images.unsplash.com/photo-1491466424936-e304919aada7?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1049&q=80");
 
             background = CropToBanner(background);
             avatar = ClipImageToCircle(avatar);
@@ -99,8 +99,8 @@ namespace Death_Bot.Utilities
 
         private Image DrawTextToImage(Image image, string header, string subheader)
         {
-            var roboto = new Font("Roboto", 30, FontStyle.Regular);
-            var robotoSmall = new Font("Roboto", 23, FontStyle.Regular);
+            var roboto = new Font("Bebas Neue", 30, FontStyle.Regular);
+            var robotoSmall = new Font("Bebas Neue", 23, FontStyle.Regular);
 
             var brushWhite = new SolidBrush(Color.White);
             var brushGrey = new SolidBrush(ColorTranslator.FromHtml("#B3B3B3"));
@@ -132,7 +132,7 @@ namespace Death_Bot.Utilities
 
             if (!response.IsSuccessStatusCode)
             {
-                var backupResponse = await client.GetAsync("https://images.unsplash.com/photo-1600758208050-a22f17dc5bb9?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80");
+                var backupResponse = await client.GetAsync("https://images.unsplash.com/photo-1491466424936-e304919aada7?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1049&q=80");
                 var backupStream = await backupResponse.Content.ReadAsStreamAsync();
                 return Image.FromStream(backupStream);
             }

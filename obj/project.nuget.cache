@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "726lqKAghvCMiKQ29H125u/PwHZ0FRQkIbnS3+eyn6yBTYj/DtTbqjajqtj88i7BVMt51dkNC48NqQhZsN3pqw==",
+  "dgSpecHash": "kExXkdT4qru+NeTDHFGGmds2g57xKwuxP2G3JGkcRtLMvFlrWbosiY4K43FN/1WSvsfvyYmQGm+h39DgEKx8Xg==",
   "success": true,
   "projectFilePath": "C:\\Users\\thera\\Desktop\\Death-Bot\\Death_Bot\\Death_Bot.csproj",
   "expectedPackageFiles": [
@@ -63,7 +63,8 @@
     "C:\\Users\\thera\\.nuget\\packages\\system.security.accesscontrol\\6.0.0-preview.2.21154.6\\system.security.accesscontrol.6.0.0-preview.2.21154.6.nupkg.sha512",
     "C:\\Users\\thera\\.nuget\\packages\\system.security.principal.windows\\6.0.0-preview.2.21154.6\\system.security.principal.windows.6.0.0-preview.2.21154.6.nupkg.sha512",
     "C:\\Users\\thera\\.nuget\\packages\\system.text.encodings.web\\6.0.0-preview.2.21154.6\\system.text.encodings.web.6.0.0-preview.2.21154.6.nupkg.sha512",
-    "C:\\Users\\thera\\.nuget\\packages\\system.text.json\\6.0.0-preview.2.21154.6\\system.text.json.6.0.0-preview.2.21154.6.nupkg.sha512"
+    "C:\\Users\\thera\\.nuget\\packages\\system.text.json\\6.0.0-preview.2.21154.6\\system.text.json.6.0.0-preview.2.21154.6.nupkg.sha512",
+    "C:\\Users\\thera\\.nuget\\packages\\victoria\\5.1.11\\victoria.5.1.11.nupkg.sha512"
   ],
   "logs": []
 }

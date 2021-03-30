@@ -9,6 +9,7 @@ using Discord.Commands;
 using Discord.WebSocket;
 using Infrastructure;
 using Microsoft.Extensions.Configuration;
+using Victoria;
 
 namespace Death_Bot.Services
 {
@@ -19,14 +20,16 @@ namespace Death_Bot.Services
         private readonly CommandService _service;
         private readonly IConfiguration _config;
         private readonly Servers _servers;
+        private readonly LavaNode _lavaNode;
 
-        public CommandHandler(IServiceProvider provider, DiscordSocketClient client, CommandService service, IConfiguration config, Servers servers)
+        public CommandHandler(IServiceProvider provider, DiscordSocketClient client, CommandService service, IConfiguration config, Servers servers, LavaNode lavaNode)
         {
             _provider = provider;
             _client = client;
             _service = service;
             _config = config;
             _servers = servers;
+            _lavaNode = lavaNode;
         }
 
         public override async Task InitializeAsync(CancellationToken cancellationToken)
@@ -34,9 +37,21 @@ namespace Death_Bot.Services
             _client.MessageReceived += OnMessageReceived;
             _client.ChannelCreated += OnChannelCreated;
             _client.ReactionAdded += OnReactionAdded;
+            _client.Ready += OnReadyAsync;
 
             _service.CommandExecuted += OnCommandExecuted;
             await _service.AddModulesAsync(Assembly.GetEntryAssembly(), _provider);
+        }
+
+        private async Task OnReadyAsync()
+        {
+            
+            if (!_lavaNode.IsConnected)
+            {
+                await _lavaNode.ConnectAsync();
+            }
+
+            // Other ready related stuff
         }
 
         private async Task OnReactionAdded(Cacheable<IUserMessage, ulong> arg1, ISocketMessageChannel arg2, SocketReaction arg3)
